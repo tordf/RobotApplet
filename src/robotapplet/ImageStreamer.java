@@ -45,7 +45,7 @@ public class ImageStreamer implements Runnable {
 
     public void run() {
         InputStream os = null;
-        InetSocketAddress sa = new InetSocketAddress("127.0.0.1", 10);
+        InetSocketAddress sa = new InetSocketAddress("158.36.70.52", 10);
         RoboustSocket rs = new RoboustSocket();
         //rs.Connect(sa);
         // keep connections

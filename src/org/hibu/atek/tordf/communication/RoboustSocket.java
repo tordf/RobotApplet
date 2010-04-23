@@ -52,6 +52,7 @@ public class RoboustSocket
         while (!getSocket().isConnected()) {
         try {            
                 System.out.println("Connecting....");
+                System.out.println(sa);
                 getSocket().connect(sa);// throws exception on falure.
                 System.out.println("Connected....");
                 

@@ -11,15 +11,17 @@ import javax.swing.JApplet;
  *
  * @author Tord
  */
-public class ClientJApplet extends JApplet {
+public class RoboApplet extends JApplet {
 
     /**
      * Initialization method that will be called after the applet is loaded
      * into the browser.
      */
-    public void init()
-    {
-        // TODO start asynchronous download of heavy resources
+    @Override
+    public void init() {
+        MainJFrame mf =new MainJFrame();
+        mf.setVisible(true);
+        mf.toFront();        // TODO start asynchronous download of heavy resources
     }
 
     // TODO overwrite start(), stop() and destroy() methods

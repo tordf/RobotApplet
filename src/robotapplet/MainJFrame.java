@@ -11,6 +11,7 @@
 
 package robotapplet;
 
+import javax.swing.JFrame;
 import org.hibu.atek.tordf.communication.ClientSocketHandler;
 
 /**
@@ -21,11 +22,13 @@ public class MainJFrame extends javax.swing.JFrame implements StatusUpdater {
 
     /** Creates new form MainJFrame */
     public MainJFrame() {
-        initComponents();
+        //initComponents();
+        this.init();
         imageStreamer.setImageUpdate(imagePanel1);
-        //Thread t = new Thread(imageStreamer);
-        //t.start();
-         csh= new ClientSocketHandler(this);
+        Thread t = new Thread(imageStreamer);
+        t.start();
+        csh= new ClientSocketHandler(this);
+         
     }
     // TODO: put this at better place.
     ImageStreamer imageStreamer = new ImageStreamer();
@@ -35,6 +38,14 @@ public class MainJFrame extends javax.swing.JFrame implements StatusUpdater {
     public void UpdateStatusMessage(String message)
     {
          jTextPane1.setText(message);
+    }
+
+    //@Override
+    public void init()
+    {
+        //super.init();
+        initComponents();
+
     }
     
     /** This method is called from within the constructor to
@@ -206,7 +217,7 @@ public class MainJFrame extends javax.swing.JFrame implements StatusUpdater {
     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {               
+            public void run() {
                 new MainJFrame().setVisible(true);
             }
         });
@@ -225,5 +236,15 @@ public class MainJFrame extends javax.swing.JFrame implements StatusUpdater {
     private javax.swing.JButton runButton;
     private javax.swing.JButton showSource;
     // End of variables declaration//GEN-END:variables
+
+    public void setDefaultCloseOperation(int EXIT_ON_CLOSE) {
+        super.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+
+    public void pack() {
+        // empty method
+        super.pack();
+        //setVisible(true);
+    }
 
 }

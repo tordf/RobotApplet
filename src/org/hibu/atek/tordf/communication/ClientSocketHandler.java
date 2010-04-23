@@ -23,6 +23,7 @@ import robotapplet.StatusUpdater;
 public class ClientSocketHandler implements SaveHandler, SourceProvider {
 
     protected StatusUpdater statusUpdater;
+    InetSocketAddress  socketAddress = new InetSocketAddress("158.36.70.52" ,Protocol.PORT);
 
     public ClientSocketHandler(StatusUpdater statusUpdater) {
         this.statusUpdater = statusUpdater;
@@ -71,7 +72,8 @@ public class ClientSocketHandler implements SaveHandler, SourceProvider {
         boolean result = false;
         try {
             Socket s = new Socket();
-            s.connect(new InetSocketAddress(Protocol.PORT));
+            System.out.println(socketAddress);
+            s.connect(socketAddress);
             if (s.isConnected()) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
                 PrintWriter bw = new PrintWriter(s.getOutputStream(), true);
@@ -98,7 +100,7 @@ public class ClientSocketHandler implements SaveHandler, SourceProvider {
         String result = null;
         try {
             Socket s = new Socket();
-            s.connect(new InetSocketAddress(Protocol.PORT));
+            s.connect(socketAddress);
             if (s.isConnected()) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
                 PrintWriter bw = new PrintWriter(s.getOutputStream(), true);
@@ -132,7 +134,7 @@ public class ClientSocketHandler implements SaveHandler, SourceProvider {
         boolean result = true;
         try {
             Socket s = new Socket();
-            s.connect(new InetSocketAddress(Protocol.PORT));
+            s.connect(socketAddress);
             if (s.isConnected()) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
                 PrintWriter bw = new PrintWriter(s.getOutputStream(), true);
@@ -163,7 +165,7 @@ public class ClientSocketHandler implements SaveHandler, SourceProvider {
         boolean result = true;
         try {
             Socket s = new Socket();
-            s.connect(new InetSocketAddress(Protocol.PORT));
+            s.connect(socketAddress);
             if (s.isConnected()) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
                 PrintWriter bw = new PrintWriter(s.getOutputStream(), true);
@@ -193,7 +195,7 @@ public class ClientSocketHandler implements SaveHandler, SourceProvider {
         boolean result = false;
         try {
             Socket s = new Socket();
-            s.connect(new InetSocketAddress(Protocol.PORT));
+            s.connect(socketAddress);
             if (s.isConnected()) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
                 PrintWriter bw = new PrintWriter(s.getOutputStream(), true);
@@ -222,7 +224,7 @@ public class ClientSocketHandler implements SaveHandler, SourceProvider {
         boolean result = false;
         try {
             Socket s = new Socket();
-            s.connect(new InetSocketAddress(Protocol.PORT));
+            s.connect(socketAddress);
             if (s.isConnected()) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
                 PrintWriter bw = new PrintWriter(s.getOutputStream(), true);
@@ -253,7 +255,7 @@ public class ClientSocketHandler implements SaveHandler, SourceProvider {
         boolean result = false;
         try {
             Socket s = new Socket();
-            s.connect(new InetSocketAddress(Protocol.PORT));
+            s.connect(socketAddress);
             if (s.isConnected()) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
                 PrintWriter bw = new PrintWriter(s.getOutputStream(), true);
