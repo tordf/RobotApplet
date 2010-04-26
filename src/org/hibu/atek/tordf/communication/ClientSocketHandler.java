@@ -23,7 +23,7 @@ import robotapplet.StatusUpdater;
 public class ClientSocketHandler implements SaveHandler, SourceProvider {
 
     protected StatusUpdater statusUpdater;
-    InetSocketAddress  socketAddress = new InetSocketAddress("158.36.70.52" ,Protocol.PORT);
+    final InetSocketAddress  socketAddress = new InetSocketAddress("158.36.70.52" ,Protocol.PORT);
 
     public ClientSocketHandler(StatusUpdater statusUpdater) {
         this.statusUpdater = statusUpdater;
